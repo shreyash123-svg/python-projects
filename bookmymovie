@@ -1,0 +1,145 @@
+CODE:
+global f
+f=0
+def t_movie():#this func is used to select movie
+    global f
+    f=f+1
+   
+    print("which movie you want to book")
+    print("1.HOUSEFULL 3")
+    print("2.Sitare zameen par")
+    print("3.chhoori 2")
+    print("4.Mission impossible-final destination")
+    print("5.back")
+    movie=int(input("enter the movie name: "))
+    if movie == 5:
+        center()
+        theater()
+        return 0
+    if f==1:
+        theater()
+def theater():
+    print("In which screen you want to watch the movie ??")
+    print("1.Screen 1")
+    print("2.Screen 2")
+    print("3.Screen 3")
+    print("4.Screen 4")
+
+    a=int(input("enter the screen no: "))
+    tickets=int(input("how many tickets do you want?"))
+    timing(a)
+def timing(a):
+    slot_1={
+        1: "10:00-1:00",
+        2: "1:10-4:10",
+        3: "4:20-7:20",
+        4: "7:30-10:30"
+    }
+    slot_2={
+        1: "10:10-1:10",
+        2: "1:30-4:30",
+        3: "4:45-7:45",
+        4: "8:00-11:00" 
+    }
+    slot_3={
+        1: "10:30-1:30",
+        2: "2:00-5:00",
+        3: "5:30-8:30",
+        4: "9:00-12:00" 
+    }
+    if a==1:
+        print("Choose your slot: ")
+        print(slot_1)
+        time=int(input("choose your time: "))
+        x=slot_1[time]
+        print("Your movie timing is",x,"enjoy your moive!!!")
+  
+    if a==2:  
+        print("Choose your slot: ")
+        print(slot_2)
+        time=int(input("choose your time: "))
+        x=slot_2[time]
+        print("Your movie timing is",x,"enjoy your moive!!!")
+    if a==3:  
+        print("Choose your slot: ")
+        print(slot_3)
+        time=int(input("choose your time: "))
+        x=slot_3[time]
+        print("Your movie timing is",x,"enjoy your moive!!!")
+    return 0
+
+
+def movie(theater):  #used to select movie acc to theater
+    if theater==1:
+        t_movie() 
+    elif theater==2:
+        t_movie() 
+    elif theater==3:
+        t_movie()   
+    elif theater==4:
+        city()
+    else:
+        print("wrong choice")
+    
+
+def center():
+    print("In which theatre you want to watch the movie??")
+    print("1.PVR")
+    print("2.INOX")
+    print("3.CINIPOLIS")
+    print("4.Single screen")
+    a=int(input("enter theatre name"))
+    movie(a)
+    return 0
+
+def city():
+    print("Welcome to BOOKMYMOVIE")
+    print("where do you want to watch the movie")
+    print("1.Nagpur")
+    print("2.Pune")
+    print("3.Mumbai")
+    place=int(input("enter your city"))
+    if place==1:
+        center()
+    elif place==2:
+        center()
+
+    elif place==3:
+        center()
+    else :
+        print("invalid choice")
+
+city()
+
+*****************************************
+OUTPUT:
+Welcome to BOOKMYMOVIE
+where do you want to watch the movie
+1.Nagpur
+2.Pune
+3.Mumbai
+enter your city 2
+In which theatre you want to watch the movie??
+1.PVR
+2.INOX
+3.CINIPOLIS
+4.Single screen
+enter theatre name 2
+which movie you want to book
+1.HOUSEFULL 3
+2.Sitare zameen par
+3.chhoori 2
+4.Mission impossible-final destination
+5.back
+enter the movie name:  2
+In which screen you want to watch the movie ??
+1.Screen 1
+2.Screen 2
+3.Screen 3
+4.Screen 4
+enter the screen no:  2
+how many tickets do you want? 2
+Choose your slot: 
+{1: '10:10-1:10', 2: '1:30-4:30', 3: '4:45-7:45', 4: '8:00-11:00'}
+choose your time:  1
+Your movie timing is 10:10-1:10 enjoy your moive!!!
